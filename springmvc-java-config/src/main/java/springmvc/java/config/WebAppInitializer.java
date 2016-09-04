@@ -14,7 +14,7 @@ public class WebAppInitializer implements WebApplicationInitializer{
 
 	@Override
 	public void onStartup(ServletContext container) throws ServletException {
-		
+		 
 		AnnotationConfigWebApplicationContext rootContext=new AnnotationConfigWebApplicationContext();
 		rootContext.register(WebConfig.class);
 		container.addListener(new ContextLoaderListener(rootContext));
