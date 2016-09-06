@@ -41,8 +41,9 @@
 	<div class="container">
 		<h1>Java Spring MVC</h1>
 		<p>The sample application</p>
-		<a href="${pageContext.request.contextPath}/displayUsers">Display Users</a>
-		<a href="${pageContext.request.contextPath}/displayUsersMysql">Display Users Mysql</a>
+		<a href="${pageContext.request.contextPath}/displayUsers">Display Users</a><br/>
+		<a href="${pageContext.request.contextPath}/displayUsersMysql">Display Users Mysql</a><br/>
+		<a href="${pageContext.request.contextPath}/newblogpost.html">New Blog Post</a>
 	</div>
 	
 	<footer class="footer">

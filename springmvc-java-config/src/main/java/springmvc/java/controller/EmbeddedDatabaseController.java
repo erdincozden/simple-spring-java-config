@@ -21,7 +21,6 @@ public class EmbeddedDatabaseController {
 	private static final Logger LOGGER=LoggerFactory.getLogger(EmbeddedDatabaseController.class);
 	
 	@Autowired
-	@Qualifier("embedded")
 	private DataSource dataSource;
 	
 	private JdbcTemplate jdbcTemplate;

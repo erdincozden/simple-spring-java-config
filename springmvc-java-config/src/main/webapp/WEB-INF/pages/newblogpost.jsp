@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE>
 <html>
@@ -48,9 +48,9 @@
 		</c:if>
 		
 		<form action="${pageContext.request.contextPath}/saveBlogPost" method="post">
-			<table>
-				<tr><td>Title</td><input type="text" name="title"><td></td></tr>
-				<tr><td>Content</td><td><textarea name="content" ></textarea></td></tr>
+			<table style="width: 650px" class="table table-striped">
+				<tr><td>Title</td><td><input type="text" name="title" required autofocus></td></tr>
+				<tr><td>Content</td><td><textarea name="content" required maxlength="4000" rows="5"></textarea></td></tr>
 				<tr><td>Draft</td><td><input type="checkbox" name="draft"> </td></tr>
 				<tr><td colspan="2"><input type="submit" value="Save"> </td></tr>		
 			</table>

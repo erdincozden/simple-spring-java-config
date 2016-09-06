@@ -9,10 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import springmvc.java.dao.BlogPostDAO;
 import springmvc.java.domain.BlogPost;
-import springmvc.java.domain.DataSource;
+
 import springmvc.java.domain.User;
 import springmvc.java.service.BlogPostService;
-import springmvc.java.service.EmailService;
+
 
 public class BlogPostServiceImpl implements BlogPostService{
 
@@ -21,10 +21,6 @@ public class BlogPostServiceImpl implements BlogPostService{
 	
 	@Autowired
 	private BlogPostDAO blogPostDAO;
-	
-    @Autowired
-    private DataSource dataSource;
-    
 	
 	@Override
 	public void savePost(BlogPost blogPost) {		
