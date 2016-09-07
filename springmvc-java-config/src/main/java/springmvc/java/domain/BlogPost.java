@@ -30,7 +30,7 @@ public class BlogPost {
 	@Column(name="publishDate",nullable=false)
 	private Date publishDate;
 	
-	@Column(name="draft",nullable=false)
+	@Column(name="draft",nullable=true)
 	private boolean draft;
 
 	@ManyToOne

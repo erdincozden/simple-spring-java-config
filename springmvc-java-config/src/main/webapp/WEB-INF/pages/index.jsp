@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <!DOCTYPE>
 <html>
 <head>
@@ -43,14 +44,17 @@
 		<p>The sample application</p>
 		<a href="${pageContext.request.contextPath}/displayUsers">Display Users</a><br/>
 		<a href="${pageContext.request.contextPath}/displayUsersMysql">Display Users Mysql</a><br/>
-		<a href="${pageContext.request.contextPath}/newblogpost.html">New Blog Post</a>
+		<a href="${pageContext.request.contextPath}/newblogpost.html">New Blog Post</a><br/>
+		<a href="${pageContext.request.contextPath}/blogposts">Blog Posts</a>
 	</div>
 	
 	<footer class="footer">
 		<div class="container">
 			<p class="text-muted">Erdinc Ozden 2016 Free Spring MVC Project ozden@live.com</p>
-			<a href="<%=request.getContextPath()%>?language=EN"></a>
-			<a href="<%=request.getContextPath()%>?language=TR"></a>		
+			<a href="<%=request.getContextPath()%>?language=en">EN</a>
+			<a href="<%=request.getContextPath()%>?language=de">DE</a>
+			<spring:message code="language"/>
+			<spring:message code="welcome.text"/>		
 		</div>
 	
 	</footer>

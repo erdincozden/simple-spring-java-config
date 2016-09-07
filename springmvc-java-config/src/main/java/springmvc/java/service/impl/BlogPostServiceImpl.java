@@ -50,14 +50,14 @@ public class BlogPostServiceImpl implements BlogPostService{
 	@Override
 	public List<BlogPost> listAllBlogPostByUserAndDraftStatus(User user, boolean draft) {
 		// TODO Auto-generated method stub
-		return null;
+		return blogPostDAO.findAllBlogPostsByUserAndDraft(user, draft);
 	}
 
 
 	@Override
 	public List<BlogPost> listAllBlogPostByUserAndTitleLike(User user, String title) {
 		// TODO Auto-generated method stub
-		return null;
+		return blogPostDAO.findAllBlogPostsByUserAndTitleContaining(user, title);
 	}
 
 

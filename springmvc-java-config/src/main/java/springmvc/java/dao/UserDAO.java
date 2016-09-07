@@ -6,5 +6,5 @@ import springmvc.java.domain.User;
 
 public interface UserDAO extends CrudRepository<User, Long> {
 
-	
+	User findUserByUsername(String username);
 }
