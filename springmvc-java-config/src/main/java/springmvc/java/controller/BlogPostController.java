@@ -1,10 +1,12 @@
 package springmvc.java.controller;
 
 import java.util.List;
+import java.util.Locale;
 
 import javax.jws.WebParam.Mode;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,11 +32,16 @@ public class BlogPostController {
 	@Autowired
 	private UserService userService;
 	
+	@Autowired
+	private MessageSource messageSource;
+	
+	
 	@RequestMapping(value="/saveBlogPost",method=RequestMethod.POST)
 	public ModelAndView saveBlogPost(
 			@RequestParam(value="title") String title,
 			@RequestParam(value="content") String content,
-			@RequestParam(value="draft",required=false) Boolean draft			
+			@RequestParam(value="draft",required=false) Boolean draft,
+			Locale locale
 			){
 		
 		
@@ -50,7 +57,7 @@ public class BlogPostController {
 			blogPostService.savePost(blogPost);
 		}
 		
-		return new ModelAndView("newblogpost","message","Blog Post is saved.");
+		return new ModelAndView("newblogpost","message",messageSource.getMessage("blogpost.saved",null, locale));
 	}
 	
 	
