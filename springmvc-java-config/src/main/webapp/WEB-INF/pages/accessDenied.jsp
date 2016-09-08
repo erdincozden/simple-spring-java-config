@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
-    <%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
 <!DOCTYPE>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Welcome</title>
+<title>Access Denied</title>
 <link
 	href="${pageContext.request.contextPath}/resources/css/bootstrap.css"
 	rel="stylesheet" />
@@ -47,17 +46,8 @@
 		<a href="${pageContext.request.contextPath}/displayUsersMysql">Display Users Mysql</a><br/>
 		<a href="${pageContext.request.contextPath}/newblogpost.html">New Blog Post</a><br/>
 		<a href="${pageContext.request.contextPath}/blogposts">Blog Posts</a>
-		<a href="${pageContext.request.contextPath}/admin.html">Admin</a>
 	</div>
 	
-	<security:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_USER')">
-		<b>You are logged in as:</b><security:authentication property="principal.username"/>
-		with the role of:<security:authentication property="principal.authorities"/>
-		<br/>
-		<a href="<c:url value="/logout"/>">Logout</a>
-	
-	</security:authorize>
-		
 	<footer class="footer">
 		<div class="container">
 			<p class="text-muted">Erdinc Ozden 2016 Free Spring MVC Project ozden@live.com</p>
